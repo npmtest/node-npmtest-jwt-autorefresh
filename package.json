@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-jwt-autorefresh",     "homepage": "https://github.com/npmtest/node-npmtest-jwt-autorefresh",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-jwt-autorefresh.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [jwt-autorefresh (v0.2.4)](http://jwt-autorefresh.js.org)  [![npm package](https://img.shields.io/npm/v/npmtest-jwt-autorefresh.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-jwt-autorefresh) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-jwt-autorefresh.svg)](https://travis-ci.org/npmtest/node-npmtest-jwt-autorefresh)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-jwt-autorefresh",
+    "keywords": [
+        "coverage",
+        "test",
+        "jwt-autorefresh"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_jwt_autorefresh.js",
+    "name": "npmtest-jwt-autorefresh",
+    "nameAlias": "npmtest_jwt_autorefresh",
+    "nameOriginal": "npmtest-jwt-autorefresh",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-jwt-autorefresh.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
